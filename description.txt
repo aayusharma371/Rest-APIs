@@ -1,0 +1,44 @@
+Secure Banking API with JWT Authentication
+ Project Description
+
+This project focuses on building a secure banking API using Express.js, a widely used Node.js framework. The main challenge is to safeguard sensitive operations such as viewing account balance, making deposits, and withdrawing funds.
+
+Security is implemented using JSON Web Tokens (JWT), which serve as access tokens:
+
+A public /login route lets users authenticate with predefined credentials to receive a signed JWT.
+
+All banking routes (/balance, /deposit, /withdraw) are protected.
+
+A custom middleware validates the JWT in the Authorization: Bearer <token> header before granting access.
+
+The API gracefully handles errors like missing/invalid tokens and business logic issues (e.g., withdrawing more funds than available).
+
+  Key Learnings
+
+API Development with Express.js
+
+Designing RESTful endpoints, handling HTTP methods (GET, POST), and managing routes.
+
+Authentication Fundamentals
+
+Understanding stateless authentication with JWT versus traditional session-based authentication.
+
+JWT Lifecycle
+
+Generation: Signing tokens upon login.
+
+Transmission: Sending tokens via the Authorization header.
+
+Verification: Validating token authenticity on each request.
+
+Express Middleware
+
+Writing custom middleware as a security gatekeeper to protect routes.
+
+Secure Route Protection
+
+Implementing authentication middleware to separate public and private API endpoints.
+
+Error Handling
+
+Using proper HTTP status codes (401 Unauthorized, 403 Forbidden, 400 Bad Request) and clear messages for security and logic-related errors.
